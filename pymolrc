@@ -1,0 +1,40 @@
+#_ feedback push
+#_ feedback disable,all,everything
+
+#config_mouse one_button
+#button Left, None, Rota
+#button Wheel, None, MovZ
+
+#button Left, Ctrl, Move
+#button Wheel, Ctrl, Movs
+
+#button Left, Shft, +Box
+#button Wheel, Shft, Slab
+
+import sys
+sys.path.append("/Users/fordas/.pymol/pymol_scripts/")
+sys.path.append("/Users/fordas/.pymol/pymol_scripts_old/")
+sys.path.append("/Users/fordas/.virtualenv/lib/python2.7/site-packages")
+
+# SVN CO of https://svn.rosettacommons.org/source/trunk/pymol
+sys.path.append("/Users/fordas/.pymol/sheffler_pymol/")
+
+import ViewAlascan
+import rosetta_vdw
+import InterfaceUtils
+import ANCHORSmap
+import Cycler
+import basic_pymol_utils
+import PyMOLPyRosettaServer
+import pymol_rpyc_server
+import dssp_stride
+
+import plugins
+
+from glob import glob
+
+
+rosetta_vdw.useRosettaRadii()
+
+#_ feedback pop
+# vim: ft=python
