@@ -20,6 +20,8 @@ sys.path.append(path.join(home_dir, "pymol_scripts/"))
 sys.path.append(path.join(home_dir, "pymol_scripts_old/"))
 sys.path.append(home_dir)
 
+os.environ['PYMOL_GIT_MOD'] = path.join(home_dir, "pymol_scripts",'modules')
+
 # SVN CO of https://svn.rosettacommons.org/source/trunk/pymol
 sys.path.append(path.join(home_dir, "sheffler_pymol/"))
 
@@ -32,6 +34,7 @@ import basic_pymol_utils
 import PyMOLPyRosettaServer
 import pymol_rpyc_server
 import dssp_stride
+import pymol2glmol
 
 import interface_fragment_utils
 
