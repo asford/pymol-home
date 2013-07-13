@@ -12,12 +12,16 @@
 #button Wheel, Shft, Slab
 
 import sys
-sys.path.append("/Users/fordas/.pymol/pymol_scripts/")
-sys.path.append("/Users/fordas/.pymol/pymol_scripts_old/")
-sys.path.append("/Users/fordas/.virtualenv/lib/python2.7/site-packages")
+from os import path
+
+home_dir = path.expanduser("~/.pymol")
+sys.path.append(path.expanduser("~/.virtualenv/lib/python2.7/site-packages"))
+sys.path.append(path.join(home_dir, "pymol_scripts/"))
+sys.path.append(path.join(home_dir, "pymol_scripts_old/"))
+sys.path.append(home_dir)
 
 # SVN CO of https://svn.rosettacommons.org/source/trunk/pymol
-sys.path.append("/Users/fordas/.pymol/sheffler_pymol/")
+sys.path.append(path.join(home_dir, "sheffler_pymol/"))
 
 import ViewAlascan
 import rosetta_vdw
@@ -29,10 +33,11 @@ import PyMOLPyRosettaServer
 import pymol_rpyc_server
 import dssp_stride
 
+import interface_fragment_utils
+
 import plugins
 
 from glob import glob
-
 
 rosetta_vdw.useRosettaRadii()
 
